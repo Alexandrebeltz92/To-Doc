@@ -23,8 +23,8 @@ import com.cleanup.todoc.model.Project;
 import com.cleanup.todoc.model.Task;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Collections;
+import java.util.Date;
 
 /**
  * <p>Home activity of the application which is displayed when the user opens the app.</p>
