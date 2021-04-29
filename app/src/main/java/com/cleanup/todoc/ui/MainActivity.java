@@ -37,7 +37,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity implements TasksAdapter.DeleteTaskListener {
 
     /**
-     * The ApiService
+     *  The ApiService
      */
     ApiService service;
 

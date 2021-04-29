@@ -11,19 +11,19 @@ public class ApiGenerator {
 
     // --- Task Generator ---
 
-    public static List<Task> TaskList = Arrays.asList(
+    public static List<Task> taskList = Arrays.asList(
     );
 
     static List<Task> getTaskList() {
-        return new ArrayList<>(TaskList);
+        return new ArrayList<>(taskList);
     }
 
     // --- Project Generator ---
 
-    public static List<Project> ProjectList = Arrays.asList(Project.getAllProjects());
+    public static List<Project> projectList = Arrays.asList(Project.getAllProjects());
 
     static List<Project> getProjectList() {
-        return new ArrayList<>(ProjectList);
+        return new ArrayList<>(projectList);
     }
 
 }
