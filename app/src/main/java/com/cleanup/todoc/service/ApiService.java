@@ -15,14 +15,14 @@ public interface ApiService {
      *
      * @return {@link List}
      */
-    List<Project> getProject();
+    List<Project> getAllProjects();
 
     /**
      * Get all my Task
      *
      * @return {@link List}
      */
-    List<Task> getTask();
+    List<Task> getTaskList();
 
     /**
      * Deletes a Task
