@@ -2,6 +2,10 @@ package com.cleanup.todoc.model;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
 import java.util.Comparator;
 
@@ -10,15 +14,18 @@ import java.util.Comparator;
  *
  * @author Gaëtan HERFRAY
  */
+@Entity (tableName = "task", foreignKeys = @ForeignKey(entity = Project.class, parentColumns = "id", childColumns = "project_id"))
 public class Task {
     /**
      * The unique identifier of the task
      */
+    @PrimaryKey (autoGenerate = true)
     private long id;
 
     /**
      * The unique identifier of the project associated to the task
      */
+    @ColumnInfo(name = "project_id", index = true)
     private long projectId;
 
     /**
