@@ -11,12 +11,12 @@ import androidx.room.PrimaryKey;
  *
  * @author Gaëtan HERFRAY
  */
-@Entity(tableName = "projects")
+//@Entity(tableName = "projects")
 public class Project {
     /**
      * The unique identifier of the project
      */
-    @PrimaryKey
+   // @PrimaryKey
     private final long id;
 
     /**
