@@ -77,7 +77,9 @@ public class MainActivity extends AppCompatActivity implements TasksAdapter.Dele
     @Nullable
     private Spinner dialogSpinner = null;
 
-    // FOR DATA
+    /**
+     * FOR DATA
+     */
     private TaskViewModel taskViewModel;
 
     /**
