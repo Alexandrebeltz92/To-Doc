@@ -28,9 +28,9 @@ public class TaskDaoTest {
 
     // DATA FOR TEST
     private static long PROJECT_ID = 4;
-    private static Project PROJECT_DEMO = new Project(PROJECT_ID, "Projet Lol", Color.blue(255));
+    private static Project PROJECT_DEMO = new Project(PROJECT_ID, "Projet Blue", Color.blue(255));
     private static long PROJECT_ID_BIS = 5;
-    private static Project PROJECT_DEMO_BIS = new Project(PROJECT_ID_BIS, "Projet mdr", Color.red(255));
+    private static Project PROJECT_DEMO_BIS = new Project(PROJECT_ID_BIS, "Projet Red", Color.red(255));
 
     // TASKS FOR TEST
     private static Task task = new Task(1, PROJECT_ID, "Faire le ménage", 1);
@@ -82,7 +82,7 @@ public class TaskDaoTest {
         this.database.taskDao().insertTask(task2);
         this.database.taskDao().insertTask(task3);
 
-        // GET LIST TASK AND ASSER SIZE == 3
+        // GET LIST TASK AND ASSERT SIZE == 3
         List<Task> tasks = LiveDataTestUtil.getValue(this.database.taskDao().getTasksFromAProject(PROJECT_ID));
         assertTrue(tasks.size() == 3);
     }
@@ -119,7 +119,7 @@ public class TaskDaoTest {
     }
 
     @Test
-    public void insertAndGetAllTasksWatheverProject() throws InterruptedException {
+    public void insertAndGetAllTasksWhateverProject() throws InterruptedException {
         // ADD PROJECTS IN DATABASE
         this.database.projectDao().createProject(PROJECT_DEMO);
         this.database.projectDao().createProject(PROJECT_DEMO_BIS);
