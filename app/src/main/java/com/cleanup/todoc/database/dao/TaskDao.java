@@ -1,10 +1,11 @@
 package com.cleanup.todoc.database.dao;
 
-import androidx.lifecycle.LiveData;
-import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.Query;
+import android.arch.lifecycle.LiveData;
+import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
+import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 
 import com.cleanup.todoc.model.Task;
 
@@ -13,27 +14,26 @@ import java.util.List;
 @Dao
 public interface TaskDao {
 
+    // CRUD
 
-    /**
-     * Return task from list
-     * @return
-     */
-   // @Query("SELECT * FROM task")
-   // LiveData<List<Task>> getTasks();
+    // Create
+    @Insert()
+    long insertTask(Task task);
 
-    /**
-     * Allow to create a new task
-     * @param task
-     */
-   //  @Insert
-   //  void insertTask(Task task);
+    // Read
+    @Query("SELECT * FROM Task WHERE projectId= :projectId")
+    LiveData<List<Task>> getTasksFromAProject(long projectId);
 
-    /**
-     * Allow to delete a task
-     * @param task
-     */
-   // @Delete
-   // void deleteTask(Task task);
+    // Read all Tasks whathever the project
+    @Query("SELECT * FROM TASK")
+    LiveData<List<Task>> getTasks();
 
+    // Update
+    @Update
+    int updateTask(Task task);
+
+    // Delete
+    @Delete
+    int deleteTask(Task task);
 
 }
