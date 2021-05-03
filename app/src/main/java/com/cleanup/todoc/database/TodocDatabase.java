@@ -13,15 +13,15 @@ import com.cleanup.todoc.model.Task;
 @Database(entities = {Task.class, Project.class}, version = 1, exportSchema = false)
 public abstract class TodocDatabase extends RoomDatabase {
 
-    // SINGLETON
+    // --- SINGLETON ---
     private static volatile TodocDatabase INSTANCE;
 
-    // DAOs
+    // --- DAOs ---
     public abstract TaskDao taskDao();
 
     public abstract ProjectDao projectDao();
 
-    // INSTANCE
+    // --- INSTANCE ---
     public static TodocDatabase getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (TodocDatabase.class) {

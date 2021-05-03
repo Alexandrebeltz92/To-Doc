@@ -17,7 +17,7 @@ public class TaskViewModel extends ViewModel {
     private final ProjectDataRepository projectDataSource;
     private final Executor executor;
 
-    // DATA
+    // --- DATA ---
 
     public TaskViewModel(TaskDataRepository taskDataRepository, ProjectDataRepository projectDataRepository, Executor executor) {
         this.taskDataSource = taskDataRepository;
