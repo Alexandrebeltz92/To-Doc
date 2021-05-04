@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements TasksAdapter.Dele
             }
         });
 
-        //CALL VIEW MODEL
+        // --- CALL VIEW MODEL ---
         this.configureViewModel();
     }
 
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements TasksAdapter.Dele
     @Override
     public void onDeleteTask(Task task) {
         tasks.remove(task);
-        // DELETE TASK FROM DATABASE
+        // --- DELETE TASK FROM DATABASE ---
         taskViewModel.deleteTask(task);
 
     }
@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity implements TasksAdapter.Dele
                 dialogInterface.dismiss();
             }
         }
-        // If dialog is aloready closed
+        // If dialog is already closed
         else {
             dialogInterface.dismiss();
         }
@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity implements TasksAdapter.Dele
      * @param task the task to be added to the list
      */
     private void addTask(@NonNull Task task) {
-        // ADD TASK TO THE DATABASE
+        // --- ADD TASK TO THE DATABASE ---
         taskViewModel.createTask(task);
 
     }
@@ -316,7 +316,7 @@ public class MainActivity extends AppCompatActivity implements TasksAdapter.Dele
         }
     }
 
-    // ---- View Model and database ---///
+    // ---- View Model and database ---
     private void configureViewModel() {
         ViewModelFactory mViewModelFactory = Injection.provideViewModelFactory(this);
         this.taskViewModel = ViewModelProviders.of(this, mViewModelFactory).get(TaskViewModel.class);
