@@ -11,9 +11,19 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file(project.file("keystore/CleanupKeyStore.jks"))
+            storePassword "OpenClassroom"
+            keyAlias "Cleanup_alias"
+            keyPassword "OpenClassroom"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -39,12 +49,12 @@ dependencies {
 
     implementation 'com.android.support:design:28.0.0'
 
-    // ROOM
+    // --- ROOM ---
     implementation 'android.arch.persistence.room:runtime:1.1.1'
     annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
 
-    //VIEW MODEL AND LIVEDATA
+    // --- VIEW MODEL AND LIVEDATA ---
     implementation 'android.arch.lifecycle:extensions:1.1.1'
-    // ROOM TEST
+    // --- ROOM TEST ---
     androidTestImplementation 'android.arch.core:core-testing:1.1.1'
 }
